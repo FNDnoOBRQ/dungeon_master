@@ -4,6 +4,7 @@ using namespace std;
 #include <cassert>
 #include <ctime>
 #include <cstdlib>
+#include "library.h"
 
 int getRandomNumber(int min, int max)
 {
@@ -20,11 +21,11 @@ protected:
     int gold;
 public:
     Creature(string n, char s, int h, int d, int g): name(n), sign(s), health(h), damage(d), gold(g){}
-    string getName(){return name;}
-    char getSign(){return sign;}
-    int getHealth(){return health;}
-    int getDamage(){return damage;}
-    int getGold(){return gold;}
+    string getName()const{return name;}
+    char getSign()const{return sign;}
+    int getHealth()const{return health;}
+    int getDamage()const{return damage;}
+    int getGold()const{return gold;}
 
     void reduceHealth(int value){
         health -= value;
