@@ -5,6 +5,7 @@ using namespace std;
 #include <ctime>
 #include <cstdlib>
 #include "library.h"
+#include <fstream>
 
 int getRandomNumber(int min, int max)
 {
@@ -100,6 +101,7 @@ string MyName(){
 }
 
 int main(){
+    ofstream Myfile("result.txt");
     srand(time(0));
     rand();
 
@@ -144,6 +146,7 @@ int main(){
     }
     else if(p.hasWon()){
         cout << "Well done. You're having:\n" << "Hp: " << p.getHealth() << "\n" << "Gold: " << p.getGold() << "\n" << "Level: " << p.getLevel() << endl;  
+        Myfile << "\tComplete!\n";
     }
     return 0;
 }
