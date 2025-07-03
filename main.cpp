@@ -4,6 +4,7 @@ using namespace std;
 #include <cassert>
 #include <ctime>
 #include <cstdlib>
+#include "library.h"
 
 int getRandomNumber(int min, int max)
 {
