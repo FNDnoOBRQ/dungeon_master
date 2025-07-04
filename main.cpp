@@ -102,7 +102,7 @@ string MyName(){
 
 int main(){
     time_t currentTime = time(nullptr);
-    ofstream Myfile("result.txt");
+    ofstream Myfile("results.txt");
     srand(time(0));
     rand();
 
@@ -144,10 +144,14 @@ int main(){
     if(p.isDead()){
         cout << "You die. You had " << p.getGold() << " gold and " << p.getLevel() << " level."<<endl;
         cout << "Try to beat the creature next time." << endl;
+
+        Myfile << "Time: " << ctime(&currentTime) << "\t Game over!";
+        Myfile << endl;
     }
     else if(p.hasWon()){
         cout << "Well done. You're having:\n" << "Hp: " << p.getHealth() << "\n" << "Gold: " << p.getGold() << "\n" << "Level: " << p.getLevel() << endl;  
-        Myfile << "Time: " << ctime(&currentTime) <<"\tComplete!\n";
+        Myfile << "Time: " << ctime(&currentTime) <<"\tComplete!";
+        Myfile << endl;
     }
     return 0;
 }
