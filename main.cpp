@@ -101,6 +101,7 @@ string MyName(){
 }
 
 int main(){
+    time_t currentTime = time(nullptr);
     ofstream Myfile("result.txt");
     srand(time(0));
     rand();
@@ -146,7 +147,7 @@ int main(){
     }
     else if(p.hasWon()){
         cout << "Well done. You're having:\n" << "Hp: " << p.getHealth() << "\n" << "Gold: " << p.getGold() << "\n" << "Level: " << p.getLevel() << endl;  
-        Myfile << "\tComplete!\n";
+        Myfile << "Time: " << ctime(&currentTime) <<"\tComplete!\n";
     }
     return 0;
 }
